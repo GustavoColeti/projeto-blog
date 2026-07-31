@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog wars | Gustavo & Pedro</title>
+  <title>Holocron Star Wars | Fandom & Teorias</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
 
   <header>
     <div class="logo">
-      <i class="fa-solid fa-jedi"></i> Blog <span> WARS</span>
+      <i class="fa-solid fa-jedi"></i> HOLOCRON <span>STAR WARS</span>
     </div>
 
     <nav class="main-nav" id="main-nav">
@@ -47,7 +47,7 @@
   <main class="container">
     
     <section class="hero-section">
-      <h1 class="main-title">Bem-vindo ao nosso blog 🖖</h1>
+      <h1 class="main-title">Holocron Fandom Star Wars</h1>
       <p class="subtitle">Explore dados confidenciais, teorias e os segredos mais profundos da galáxia.</p>
       
       <div class="search-filter-container glass-card">
@@ -68,7 +68,7 @@
       
       <div class="card active" data-category="force" onclick="selectTopic(event, 'force')">
         <div class="card-image-wrapper">
-          <img src="https://github.com/GustavoColeti/projeto-blog/blob/main/48b1cc0aaed51778d0138ea3cb151599.jpg?raw=true" alt="A Força">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500" alt="A Força">
         </div>
         <div class="card-content">
           <h3>A Força</h3>
@@ -78,7 +78,7 @@
 
       <div class="card" data-category="orders" onclick="selectTopic(event, 'jedi')">
         <div class="card-image-wrapper">
-          <img src="https://github.com/GustavoColeti/projeto-blog/blob/main/3201aab790f37e719ce24b686ea3fc51.jpg?raw=true" alt="A Ordem Jedi">
+          <img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=500" alt="A Ordem Jedi">
         </div>
         <div class="card-content">
           <h3>A Ordem Jedi</h3>
@@ -88,7 +88,7 @@
 
       <div class="card" data-category="orders" onclick="selectTopic(event, 'sith')">
         <div class="card-image-wrapper">
-          <img src="https://github.com/GustavoColeti/projeto-blog/blob/main/3c8bb45afdde6153be4bcc62c4f01613.jpg?raw=true" alt="Os Sith">
+          <img src="https://images.unsplash.com/photo-1579566346927-c68383817a25?w=500" alt="Os Sith">
         </div>
         <div class="card-content">
           <h3>Os Sith</h3>
@@ -98,7 +98,7 @@
 
       <div class="card" data-category="orders" onclick="selectTopic(event, 'empire')">
         <div class="card-image-wrapper">
-          <img src="https://github.com/GustavoColeti/projeto-blog/blob/main/07ad9022a29376d3327fa07bab26ec97.jpg?raw=true" alt="O Império">
+          <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500" alt="O Império">
         </div>
         <div class="card-content">
           <h3>O Império</h3>
@@ -108,7 +108,7 @@
 
       <div class="card" data-category="mandalore" onclick="selectTopic(event, 'mandalore')">
         <div class="card-image-wrapper">
-          <img src="https://github.com/GustavoColeti/projeto-blog/blob/main/0c9b2008c0700bfe7a09ff5a276832e4.jpg?raw=true" alt="Mandalorianos">
+          <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500" alt="Mandalorianos">
         </div>
         <div class="card-content">
           <h3>Mandalore</h3>
@@ -125,7 +125,12 @@
         <p>A Força é um campo de energia criado por todos os seres vivos. Ela nos cerca, nos penetra e mantém a galáxia unida. Possui o Lado Luminoso, focado na paz e compaixão, e o Lado Sombrio, alimentado pela raiva e medo.</p>
 
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/watch?v=oJN0LCU25iQ" title="Star Wars Video" allowfullscreen></iframe>
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/b52nlWiER3I" 
+            title="A Força no Star Wars" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
         </div>
 
         <div class="interactive-panel">
@@ -138,14 +143,18 @@
         </div>
       </article>
 
-      <div class="video-wrapper">
-  <iframe 
-    src="https://www.youtube-nocookie.com/embed/rDcqz_l3mQw" 
-    title="Vídeo Star Wars" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-  </iframe>
-</div>
+      <article id="jedi" class="article-content">
+        <h2><i class="fa-solid fa-shield-halved"></i> A Ordem Jedi</h2>
+        <p>Os Jedi são os guardiões da paz e da justiça na galáxia. Usando o Lado Luminoso da Força e sabres de luz, eles lutam pela harmonia. Seu código exige disciplina, controle emocional e devoção ao bem comum.</p>
+
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/rDcqz_l3mQw?start=33" 
+            title="A Ordem Jedi" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
 
         <div class="interactive-panel">
           <button class="reaction-btn like-btn" onclick="addReaction('jedi', 'likes')">
@@ -162,7 +171,12 @@
         <p>Os Sith são os antigos inimigos dos Jedi. Eles usam o Lado Sombrio da Força buscando poder pessoal, paixão e domínio. Operam sob a "Regra de Dois": apenas um mestre e um aprendiz por vez.</p>
 
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/watch?v=kNps-hUUASs&t=28s" title="Sith Video" allowfullscreen></iframe>
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/kNps-hUUASs?start=28" 
+            title="Os Sith" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
         </div>
 
         <div class="interactive-panel">
@@ -180,7 +194,12 @@
         <p>Nascido das cinzas da República Galáctica, o Império governou a galáxia através do medo, poder militar devastador e superarmas como a Estrela da Morte, sob o comando do Imperador Palpatine.</p>
 
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/watch?v=lYUlaT9kEF4&t=28s" title="Empire Video" allowfullscreen></iframe>
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/kNps-hUUASs?start=28" 
+            title="O Império Galáctico" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
         </div>
 
         <div class="interactive-panel">
@@ -198,7 +217,12 @@
         <p>Uma cultura lendária de guerreiros conhecidos por suas armaduras de Beskar, código de honra rigoroso e habilidade de combate inigualável. Seu lema marcante é "This is the Way" (Este é o Caminho).</p>
 
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/watch?v=b52nlWiER3I" title="Mandalorian Video" allowfullscreen></iframe>
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/aOC8E8CwST4" 
+            title="Mandalorian Video" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
         </div>
 
         <div class="interactive-panel">
@@ -279,7 +303,7 @@
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; Trabalho digital-1TB-Gustavo e Pedro-numeros 21 e 35.</p>
+      <p>&copy; 2026 Holocron Star Wars. Que a Força esteja com você.</p>
     </div>
   </footer>
 
