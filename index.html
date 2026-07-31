@@ -3,53 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Holocron Star Wars</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Holocron Star Wars | Fandom & Teorias</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
 
+  <div id="animated-bg">
+    <div class="stars"></div>
+    <div class="nebula"></div>
+    <div id="snow-container"></div>
+  </div>
+
+  <div id="reading-progress"></div>
+
   <header>
-    <div class="logo">STAR WARS <span>BLOG</span></div>
-    <button id="theme-btn" class="glow-button">⚡ Alternar Tema</button>
+    <div class="logo">
+      <i class="fa-solid fa-jedi"></i> HOLOCRON <span>STAR WARS</span>
+    </div>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="#teorias"><i class="fa-solid fa-book-journal-whills"></i> Teorias</a>
+      <a href="#mandalorian"><i class="fa-solid fa-helmet-safety"></i> The Mandalorian</a>
+      <a href="#creditos"><i class="fa-solid fa-users"></i> Créditos</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="theme-btn" class="glow-button" aria-label="Alternar Tema">
+        <i class="fa-solid fa-moon"></i> <span>Modo Escuro</span>
+      </button>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
   </header>
 
   <main class="container">
-    <h1 class="main-title">Selecione um Arquivo do Holocron</h1>
     
-    <section class="cards-grid">
+    <section class="hero-section">
+      <h1 class="main-title">Holocron Fandom Star Wars</h1>
+      <p class="subtitle">Explore dados confidenciais, teorias e os segredos mais profundos da galáxia.</p>
       
-      <div class="card active" onclick="selectTopic('force')">
-        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500" alt="A Força">
-        <h3>A Força</h3>
+      <div class="search-filter-container glass-card">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Pesquisar arquivos ou teorias...">
+        </div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-category="all">Todos</button>
+          <button class="filter-btn" data-category="force">Força</button>
+          <button class="filter-btn" data-category="orders">Ordens</button>
+          <button class="filter-btn" data-category="mandalore">Mandalore</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards-grid" id="teorias">
+      
+      <div class="card active" data-category="force" onclick="selectTopic(event, 'force')">
+        <div class="card-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500" alt="A Força">
+        </div>
+        <div class="card-content">
+          <h3>A Força</h3>
+          <span class="badge">Força</span>
+        </div>
       </div>
 
-      <div class="card" onclick="selectTopic('jedi')">
-        <img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=500" alt="A Ordem Jedi">
-        <h3>A Ordem Jedi</h3>
+      <div class="card" data-category="orders" onclick="selectTopic(event, 'jedi')">
+        <div class="card-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=500" alt="A Ordem Jedi">
+        </div>
+        <div class="card-content">
+          <h3>A Ordem Jedi</h3>
+          <span class="badge">Ordens</span>
+        </div>
       </div>
 
-      <div class="card" onclick="selectTopic('sith')">
-        <img src="https://images.unsplash.com/photo-1579566346927-c68383817a25?w=500" alt="Os Sith">
-        <h3>Os Sith</h3>
+      <div class="card" data-category="orders" onclick="selectTopic(event, 'sith')">
+        <div class="card-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1579566346927-c68383817a25?w=500" alt="Os Sith">
+        </div>
+        <div class="card-content">
+          <h3>Os Sith</h3>
+          <span class="badge">Ordens</span>
+        </div>
       </div>
 
-      <div class="card" onclick="selectTopic('empire')">
-        <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500" alt="O Império">
-        <h3>O Império</h3>
+      <div class="card" data-category="orders" onclick="selectTopic(event, 'empire')">
+        <div class="card-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500" alt="O Império">
+        </div>
+        <div class="card-content">
+          <h3>O Império</h3>
+          <span class="badge">Ordens</span>
+        </div>
       </div>
 
-      <div class="card" onclick="selectTopic('mandalore')">
-        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500" alt="Mandalorianos">
-        <h3>Mandalore</h3>
+      <div class="card" data-category="mandalore" onclick="selectTopic(event, 'mandalore')">
+        <div class="card-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500" alt="Mandalorianos">
+        </div>
+        <div class="card-content">
+          <h3>Mandalore</h3>
+          <span class="badge">Mandalore</span>
+        </div>
       </div>
 
     </section>
 
-    <section class="content-display">
+    <section class="content-display glass-card">
       
       <article id="force" class="article-content active">
-        <h2>A Força</h2>
+        <h2><i class="fa-solid fa-bolt"></i> A Força</h2>
         <p>A Força é um campo de energia criado por todos os seres vivos. Ela nos cerca, nos penetra e mantém a galáxia unida. Possui o Lado Luminoso, focado na paz e compaixão, e o Lado Sombrio, alimentado pela raiva e medo.</p>
 
         <div class="video-wrapper">
@@ -57,13 +129,17 @@
         </div>
 
         <div class="interactive-panel">
-          <button class="like-btn" onclick="addReaction('force', 'likes')">👍 Like (<span id="likes-force">0</span>)</button>
-          <button class="dislike-btn" onclick="addReaction('force', 'dislikes')">👎 Dislike (<span id="dislikes-force">0</span>)</button>
+          <button class="reaction-btn like-btn" onclick="addReaction('force', 'likes')">
+            <i class="fa-solid fa-thumbs-up"></i> Like (<span id="likes-force">0</span>)
+          </button>
+          <button class="reaction-btn dislike-btn" onclick="addReaction('force', 'dislikes')">
+            <i class="fa-solid fa-thumbs-down"></i> Dislike (<span id="dislikes-force">0</span>)
+          </button>
         </div>
       </article>
 
       <article id="jedi" class="article-content">
-        <h2>A Ordem Jedi</h2>
+        <h2><i class="fa-solid fa-shield-halved"></i> A Ordem Jedi</h2>
         <p>Os Jedi são os guardiões da paz e da justiça na galáxia. Usando o Lado Luminoso da Força e sabres de luz, eles lutam pela harmonia. Seu código exige disciplina, controle emocional e devoção ao bem comum.</p>
 
         <div class="video-wrapper">
@@ -71,13 +147,17 @@
         </div>
 
         <div class="interactive-panel">
-          <button class="like-btn" onclick="addReaction('jedi', 'likes')">👍 Like (<span id="likes-jedi">0</span>)</button>
-          <button class="dislike-btn" onclick="addReaction('jedi', 'dislikes')">👎 Dislike (<span id="dislikes-jedi">0</span>)</button>
+          <button class="reaction-btn like-btn" onclick="addReaction('jedi', 'likes')">
+            <i class="fa-solid fa-thumbs-up"></i> Like (<span id="likes-jedi">0</span>)
+          </button>
+          <button class="reaction-btn dislike-btn" onclick="addReaction('jedi', 'dislikes')">
+            <i class="fa-solid fa-thumbs-down"></i> Dislike (<span id="dislikes-jedi">0</span>)
+          </button>
         </div>
       </article>
 
       <article id="sith" class="article-content">
-        <h2>Os Sith</h2>
+        <h2><i class="fa-solid fa-skull"></i> Os Sith</h2>
         <p>Os Sith são os antigos inimigos dos Jedi. Eles usam o Lado Sombrio da Força buscando poder pessoal, paixão e domínio. Operam sob a "Regra de Dois": apenas um mestre e um aprendiz por vez.</p>
 
         <div class="video-wrapper">
@@ -85,13 +165,17 @@
         </div>
 
         <div class="interactive-panel">
-          <button class="like-btn" onclick="addReaction('sith', 'likes')">👍 Like (<span id="likes-sith">0</span>)</button>
-          <button class="dislike-btn" onclick="addReaction('sith', 'dislikes')">👎 Dislike (<span id="dislikes-sith">0</span>)</button>
+          <button class="reaction-btn like-btn" onclick="addReaction('sith', 'likes')">
+            <i class="fa-solid fa-thumbs-up"></i> Like (<span id="likes-sith">0</span>)
+          </button>
+          <button class="reaction-btn dislike-btn" onclick="addReaction('sith', 'dislikes')">
+            <i class="fa-solid fa-thumbs-down"></i> Dislike (<span id="dislikes-sith">0</span>)
+          </button>
         </div>
       </article>
 
       <article id="empire" class="article-content">
-        <h2>O Império Galáctico</h2>
+        <h2><i class="fa-solid fa-crown"></i> O Império Galáctico</h2>
         <p>Nascido das cinzas da República Galáctica, o Império governou a galáxia através do medo, poder militar devastador e superarmas como a Estrela da Morte, sob o comando do Imperador Palpatine.</p>
 
         <div class="video-wrapper">
@@ -99,13 +183,17 @@
         </div>
 
         <div class="interactive-panel">
-          <button class="like-btn" onclick="addReaction('empire', 'likes')">👍 Like (<span id="likes-empire">0</span>)</button>
-          <button class="dislike-btn" onclick="addReaction('empire', 'dislikes')">👎 Dislike (<span id="dislikes-empire">0</span>)</button>
+          <button class="reaction-btn like-btn" onclick="addReaction('empire', 'likes')">
+            <i class="fa-solid fa-thumbs-up"></i> Like (<span id="likes-empire">0</span>)
+          </button>
+          <button class="reaction-btn dislike-btn" onclick="addReaction('empire', 'dislikes')">
+            <i class="fa-solid fa-thumbs-down"></i> Dislike (<span id="dislikes-empire">0</span>)
+          </button>
         </div>
       </article>
 
       <article id="mandalore" class="article-content">
-        <h2>Os Mandalorianos</h2>
+        <h2><i class="fa-solid fa-mask"></i> Os Mandalorianos</h2>
         <p>Uma cultura lendária de guerreiros conhecidos por suas armaduras de Beskar, código de honra rigoroso e habilidade de combate inigualável. Seu lema marcante é "This is the Way" (Este é o Caminho).</p>
 
         <div class="video-wrapper">
@@ -113,13 +201,86 @@
         </div>
 
         <div class="interactive-panel">
-          <button class="like-btn" onclick="addReaction('mandalore', 'likes')">👍 Like (<span id="likes-mandalore">0</span>)</button>
-          <button class="dislike-btn" onclick="addReaction('mandalore', 'dislikes')">👎 Dislike (<span id="dislikes-mandalore">0</span>)</button>
+          <button class="reaction-btn like-btn" onclick="addReaction('mandalore', 'likes')">
+            <i class="fa-solid fa-thumbs-up"></i> Like (<span id="likes-mandalore">0</span>)
+          </button>
+          <button class="reaction-btn dislike-btn" onclick="addReaction('mandalore', 'dislikes')">
+            <i class="fa-solid fa-thumbs-down"></i> Dislike (<span id="dislikes-mandalore">0</span>)
+          </button>
         </div>
       </article>
 
     </section>
+
+    <section class="mandalorian-section" id="mandalorian">
+      <h2 class="section-title"><i class="fa-solid fa-hat-cowboy"></i> Dossier: The Mandalorian & Teorias</h2>
+      
+      <div class="grid-layout">
+        
+        <div class="glass-card article-card" data-category="mandalore">
+          <div class="card-icon"><i class="fa-solid fa-user-ninja"></i></div>
+          <h3>1. Quem é o Mandaloriano? A Trajetória de Din Djarin</h3>
+          <p>O protagonista da série, conhecido popularmente como "O Mandaloriano", chama-se Din Djarin. Ele não nasceu no planeta Mandalore; na verdade, ele foi um "enjeitado", uma criança órfã resgatada por guerreiros mandalorianos durante as Guerras Clônicas. Criado sob as rígidas tradições de uma seita conhecida como a Tribo, ele se tornou um caçador de recompensas habilidoso e solitário, operando nas bordas externas da galáxia após a queda do Império Galáctico.</p>
+          <p>A trajetória de Din Djarin muda drasticamente quando ele aceita uma missão misteriosa que o leva a encontrar uma criatura da mesma espécie do mestre Yoda. Em vez de entregar o alvo para receber sua recompensa, o Mandaloriano decide quebrar o código da sua guilda para proteger a criança, iniciando uma jornada de transformação que o força a questionar suas próprias crenças e a assumir o papel de pai e protetor.</p>
+        </div>
+
+        <div class="glass-card article-card" data-category="force">
+          <div class="card-icon"><i class="fa-solid fa-baby"></i></div>
+          <h3>2. O Fenômeno Grogu: De "Baby Yoda" a Aprendiz Mandaloriano</h3>
+          <p>Batizado inicialmente pelo público como "Baby Yoda", o personagem Grogu tornou-se um dos maiores fenômenos de cultura pop dos últimos anos. Ele pertence à mesma espécie misteriosa e rara do lendário Mestre Yoda e, apesar de sua aparência infantil e vulnerável, Grogu já viveu por mais de 50 anos e possui uma forte conexão com a Força, sendo capaz de mover objetos grandes e curar ferimentos graves.</p>
+          <p>Antes de encontrar Din Djarin, Grogu foi criado no Templo Jedi em Coruscant e precisou ser escondido após a Ordem 66. Ao longo de sua jornada na série, ele passa de um alvo indefeso a um aprendiz. Mesmo tendo a oportunidade de treinar com Luke Skywalker para se tornar um Jedi, Grogu escolhe retornar para os braços de seu protetor, sendo oficialmente adotado por Din Djarin e iniciando seu treinamento para seguir os costumes mandalorianos.</p>
+        </div>
+
+        <div class="glass-card article-card" data-category="mandalore">
+          <div class="card-icon"><i class="fa-solid fa-shield-cat"></i></div>
+          <h3>3. A Armadura de Beskar: O Design Visual da Série</h3>
+          <p>Um dos elementos visuais mais marcantes e simbólicos de The Mandalorian é a armadura do protagonista, feita de Beskar. O Beskar é um metal extremamente raro e valioso, nativo do planeta Mandalore, conhecido por sua resistência lendária. Ele é capaz de suportar disparos de blasters e até mesmo resistir a golpes diretos de sabres de luz, o que torna os guerreiros mandalorianos oponentes temíveis.</p>
+          <p>No início da série, Din Djarin veste uma armadura remendada com peças de outros metais. Conforme ele cumpre missões perigosas, ele recebe placas de Beskar puro como pagamento, que são fundidas pela Armadora para criar seu traje prateado e reluzente. Além da proteção física, a evolução da armadura funciona como um indicador visual do status e das conquistas do personagem dentro da narrativa.</p>
+        </div>
+
+        <div class="glass-card article-card grid-span-2" data-category="orders">
+          <div class="card-icon"><i class="fa-solid fa-users-gear"></i></div>
+          <h3>4. Aliados e Inimigos de Peso na Galáxia</h3>
+          <p>A jornada do Mandaloriano é marcada por encontros com personagens que moldam o destino da galáxia. Entre os principais aliados está Bo-Katan Kryze, uma líder mandaloriana de linhagem real que busca unificar seu povo destruído e recuperar o trono de Mandalore. Outros aliados importantes incluem Greef Karga, o líder da guilda de caçadores de recompensa que se torna o magistrado de Nevarro, e a Armadora, que atua como a guia espiritual e técnica da seita de Din Djarin.</p>
+          <p>Do lado dos antagonistas, o principal perigo é representado por Moff Gideon, um ambicioso líder remanescente do Império Galáctico. Gideon lidera uma facção imperial secreta e busca capturar Grogu para realizar experimentos com seu sangue rico em "Midi-chlorians". Para consolidar seu poder, ele chega a empunhar o Sabre Sombrio (Darksaber), uma arma ancestral que simboliza o direito de governar o planeta Mandalore.</p>
+        </div>
+
+      </div>
+    </section>
+
   </main>
+
+  <button id="back-to-top" class="glow-button" aria-label="Voltar ao Topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <footer id="creditos">
+    <div class="footer-container container">
+      <div class="footer-info">
+        <h3><i class="fa-solid fa-jedi"></i> Holocron Star Wars</h3>
+        <p>Base de conhecimento e teorias expandidas do universo de Star Wars.</p>
+      </div>
+
+      <div class="footer-credits">
+        <h4>Créditos do Projeto</h4>
+        <p><strong>Desenvolvido por:</strong> Gustavo</p>
+        <p><strong>Primeiro TB:</strong> Gustavo e Pedro</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Links Úteis</h4>
+        <div class="social-links">
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i> YouTube</a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#contato" id="contact-link"><i class="fa-solid fa-envelope"></i> Contato</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 Holocron Star Wars. Que a Força esteja com você.</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
