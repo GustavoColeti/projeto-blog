@@ -3,67 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Blog Simples</title>
+  <title>Holocron Star Wars</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark-theme">
 
   <header>
-    <h1>Meu Blog</h1>
-    <button id="theme-toggle">🌙 Modo Escuro</button>
+    <div class="logo">STAR WARS <span>BLOG</span></div>
+    <button id="theme-btn" class="glow-button">⚡ Alternar Tema</button>
   </header>
 
-  <div class="container">
+  <main class="container">
+    <h1 class="main-title">Selecione um Arquivo do Holocron</h1>
     
-    <aside class="sidebar">
-      <h2>Artigos</h2>
-      <ul>
-        <li><button onclick="selectArticle('post1')">1. Introdução ao VS Code</button></li>
-        <li><button onclick="selectArticle('post2')">2. O Poder do CSS Grid</button></li>
-      </ul>
-    </aside>
-
-    <main class="content">
+    <section class="cards-grid">
       
-      <article id="post1" class="post active">
-        <h2>Como usar o VS Code no Navegador</h2>
-        <p class="date">Publicado em: 2026</p>
-        
-        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600" alt="Código na tela do computador">
-        
-        <p>O VS Code.dev permite que você edite arquivos diretamente do seu navegador, sem precisar instalar nada!</p>
-        
-        <h3>Vídeo Explicativo:</h3>
-        <div class="video-container">
-          <iframe 
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-            title="Vídeo do YouTube" 
-            allowfullscreen>
-          </iframe>
+      <div class="card active" onclick="selectTopic('force')">
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500" alt="A Força">
+        <h3>A Força</h3>
+      </div>
+
+      <div class="card" onclick="selectTopic('jedi')">
+        <img src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=500" alt="A Ordem Jedi">
+        <h3>A Ordem Jedi</h3>
+      </div>
+
+      <div class="card" onclick="selectTopic('sith')">
+        <img src="https://images.unsplash.com/photo-1579566346927-c68383817a25?w=500" alt="Os Sith">
+        <h3>Os Sith</h3>
+      </div>
+
+      <div class="card" onclick="selectTopic('empire')">
+        <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500" alt="O Império">
+        <h3>O Império</h3>
+      </div>
+
+      <div class="card" onclick="selectTopic('mandalore')">
+        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500" alt="Mandalorianos">
+        <h3>Mandalore</h3>
+      </div>
+
+    </section>
+
+    <section class="content-display">
+      
+      <article id="force" class="article-content active">
+        <h2>A Força</h2>
+        <p>A Força é um campo de energia criado por todos os seres vivos. Ela nos cerca, nos penetra e mantém a galáxia unida. Possui o Lado Luminoso, focado na paz e compaixão, e o Lado Sombrio, alimentado pela raiva e medo.</p>
+
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/2P5I9wT7_8s" title="Star Wars Video" allowfullscreen></iframe>
         </div>
 
-        <div class="reactions">
-          <button onclick="like('post1')">👍 Like (<span id="likes-post1">0</span>)</button>
-          <button onclick="dislike('post1')">👎 Dislike (<span id="dislikes-post1">0</span>)</button>
+        <div class="interactive-panel">
+          <button class="like-btn" onclick="addReaction('force', 'likes')">👍 Like (<span id="likes-force">0</span>)</button>
+          <button class="dislike-btn" onclick="addReaction('force', 'dislikes')">👎 Dislike (<span id="dislikes-force">0</span>)</button>
         </div>
       </article>
 
-      <article id="post2" class="post">
-        <h2>Estilizando com CSS Moderno</h2>
-        <p class="date">Publicado em: 2026</p>
-        
-        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600" alt="Design e código">
-        
-        <p>Aprender CSS torna seus projetos visivelmente incríveis e responsivos para qualquer dispositivo.</p>
+      <article id="jedi" class="article-content">
+        <h2>A Ordem Jedi</h2>
+        <p>Os Jedi são os guardiões da paz e da justiça na galáxia. Usando o Lado Luminoso da Força e sabres de luz, eles lutam pela harmonia. Seu código exige disciplina, controle emocional e devoção ao bem comum.</p>
 
-        <div class="reactions">
-          <button onclick="like('post2')">👍 Like (<span id="likes-post2">0</span>)</button>
-          <button onclick="dislike('post2')">👎 Dislike (<span id="dislikes-post2">0</span>)</button>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/8Qn_spdM5Zg" title="Jedi Order Video" allowfullscreen></iframe>
+        </div>
+
+        <div class="interactive-panel">
+          <button class="like-btn" onclick="addReaction('jedi', 'likes')">👍 Like (<span id="likes-jedi">0</span>)</button>
+          <button class="dislike-btn" onclick="addReaction('jedi', 'dislikes')">👎 Dislike (<span id="dislikes-jedi">0</span>)</button>
         </div>
       </article>
 
-    </main>
-  </div>
+      <article id="sith" class="article-content">
+        <h2>Os Sith</h2>
+        <p>Os Sith são os antigos inimigos dos Jedi. Eles usam o Lado Sombrio da Força buscando poder pessoal, paixão e domínio. Operam sob a "Regra de Dois": apenas um mestre e um aprendiz por vez.</p>
+
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/0mB4JkSFi8w" title="Sith Video" allowfullscreen></iframe>
+        </div>
+
+        <div class="interactive-panel">
+          <button class="like-btn" onclick="addReaction('sith', 'likes')">👍 Like (<span id="likes-sith">0</span>)</button>
+          <button class="dislike-btn" onclick="addReaction('sith', 'dislikes')">👎 Dislike (<span id="dislikes-sith">0</span>)</button>
+        </div>
+      </article>
+
+      <article id="empire" class="article-content">
+        <h2>O Império Galáctico</h2>
+        <p>Nascido das cinzas da República Galáctica, o Império governou a galáxia através do medo, poder militar devastador e superarmas como a Estrela da Morte, sob o comando do Imperador Palpatine.</p>
+
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/3241F83P8t8" title="Empire Video" allowfullscreen></iframe>
+        </div>
+
+        <div class="interactive-panel">
+          <button class="like-btn" onclick="addReaction('empire', 'likes')">👍 Like (<span id="likes-empire">0</span>)</button>
+          <button class="dislike-btn" onclick="addReaction('empire', 'dislikes')">👎 Dislike (<span id="dislikes-empire">0</span>)</button>
+        </div>
+      </article>
+
+      <article id="mandalore" class="article-content">
+        <h2>Os Mandalorianos</h2>
+        <p>Uma cultura lendária de guerreiros conhecidos por suas armaduras de Beskar, código de honra rigoroso e habilidade de combate inigualável. Seu lema marcante é "This is the Way" (Este é o Caminho).</p>
+
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/aOC8E8CwST4" title="Mandalorian Video" allowfullscreen></iframe>
+        </div>
+
+        <div class="interactive-panel">
+          <button class="like-btn" onclick="addReaction('mandalore', 'likes')">👍 Like (<span id="likes-mandalore">0</span>)</button>
+          <button class="dislike-btn" onclick="addReaction('mandalore', 'dislikes')">👎 Dislike (<span id="dislikes-mandalore">0</span>)</button>
+        </div>
+      </article>
+
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>

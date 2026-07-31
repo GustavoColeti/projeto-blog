@@ -1,40 +1,42 @@
-// Armazenamento simples de curtidas na memória
-const votes = {
-  post1: { likes: 0, dislikes: 0 },
-  post2: { likes: 0, dislikes: 0 }
+// Banco de dados em memória para as reações
+const reactionsData = {
+  force: { likes: 0, dislikes: 0 },
+  jedi: { likes: 0, dislikes: 0 },
+  sith: { likes: 0, dislikes: 0 },
+  empire: { likes: 0, dislikes: 0 },
+  mandalore: { likes: 0, dislikes: 0 }
 };
 
-// Alternar entre Tema Claro e Escuro
-const themeToggleBtn = document.getElementById('theme-toggle');
-
-themeToggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  
-  if (document.body.classList.contains('dark-mode')) {
-    themeToggleBtn.textContent = '☀️ Modo Claro';
-  } else {
-    themeToggleBtn.textContent = '🌙 Modo Escuro';
-  }
-});
-
-// Selecionar Artigo Visível
-function selectArticle(articleId) {
-  const articles = document.querySelectorAll('.post');
+// Função para trocar o texto/artigo exibido ao clicar nos cards
+function selectTopic(topicId) {
+  // Oculta todos os textos
+  const articles = document.querySelectorAll('.article-content');
   articles.forEach(article => article.classList.remove('active'));
-  
-  const selectedArticle = document.getElementById(articleId);
+
+  // Remove o efeito ativo de todos os cards superiores
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => card.classList.remove('active'));
+
+  // Ativa o artigo correspondente ao clique
+  const selectedArticle = document.getElementById(topicId);
   if (selectedArticle) {
     selectedArticle.classList.add('active');
   }
+
+  // Adiciona o destaque visual ao card clicado
+  event.currentTarget.classList.add('active');
 }
 
-// Funções de Like e Dislike
-function like(postId) {
-  votes[postId].likes++;
-  document.getElementById(`likes-${postId}`).textContent = votes[postId].likes;
+// Função de Like/Dislike
+function addReaction(topicId, type) {
+  if (reactionsData[topicId]) {
+    reactionsData[topicId][type]++;
+    document.getElementById(`${type}-${topicId}`).textContent = reactionsData[topicId][type];
+  }
 }
 
-function dislike(postId) {
-  votes[postId].dislikes++;
-  document.getElementById(`dislikes-${postId}`).textContent = votes[postId].dislikes;
-}
+// Alternar entre modo claro e escuro
+const themeBtn = document.getElementById('theme-btn');
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-theme');
+});
