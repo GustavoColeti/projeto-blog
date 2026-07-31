@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Blog Simples</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Meu Blog</h1>
+    <button id="theme-toggle">🌙 Modo Escuro</button>
+  </header>
+
+  <div class="container">
+    
+    <aside class="sidebar">
+      <h2>Artigos</h2>
+      <ul>
+        <li><button onclick="selectArticle('post1')">1. Introdução ao VS Code</button></li>
+        <li><button onclick="selectArticle('post2')">2. O Poder do CSS Grid</button></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      
+      <article id="post1" class="post active">
+        <h2>Como usar o VS Code no Navegador</h2>
+        <p class="date">Publicado em: 2026</p>
+        
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600" alt="Código na tela do computador">
+        
+        <p>O VS Code.dev permite que você edite arquivos diretamente do seu navegador, sem precisar instalar nada!</p>
+        
+        <h3>Vídeo Explicativo:</h3>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="Vídeo do YouTube" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="reactions">
+          <button onclick="like('post1')">👍 Like (<span id="likes-post1">0</span>)</button>
+          <button onclick="dislike('post1')">👎 Dislike (<span id="dislikes-post1">0</span>)</button>
+        </div>
+      </article>
+
+      <article id="post2" class="post">
+        <h2>Estilizando com CSS Moderno</h2>
+        <p class="date">Publicado em: 2026</p>
+        
+        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600" alt="Design e código">
+        
+        <p>Aprender CSS torna seus projetos visivelmente incríveis e responsivos para qualquer dispositivo.</p>
+
+        <div class="reactions">
+          <button onclick="like('post2')">👍 Like (<span id="likes-post2">0</span>)</button>
+          <button onclick="dislike('post2')">👎 Dislike (<span id="dislikes-post2">0</span>)</button>
+        </div>
+      </article>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
