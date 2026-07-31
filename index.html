@@ -125,13 +125,18 @@
         <p>A Força é um campo de energia criado por todos os seres vivos. Ela nos cerca, nos penetra e mantém a galáxia unida. Possui o Lado Luminoso, focado na paz e compaixão, e o Lado Sombrio, alimentado pela raiva e medo.</p>
 
         <div class="video-wrapper">
-  <iframe 
-    src="https://www.youtube.com/watch?v=lYUlaT9kEF4&t=28s" 
-    title="Vídeo do YouTube" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-  </iframe>
-</div>
+          <iframe src="https://www.youtube.com/watch?v=oJN0LCU25iQ" title="Star Wars Video" allowfullscreen></iframe>
+        </div>
+
+        <div class="interactive-panel">
+          <button class="reaction-btn like-btn" onclick="addReaction('force', 'likes')">
+            <i class="fa-solid fa-thumbs-up"></i> Like (<span id="likes-force">0</span>)
+          </button>
+          <button class="reaction-btn dislike-btn" onclick="addReaction('force', 'dislikes')">
+            <i class="fa-solid fa-thumbs-down"></i> Dislike (<span id="dislikes-force">0</span>)
+          </button>
+        </div>
+      </article>
 
       <div class="video-wrapper">
   <iframe 
